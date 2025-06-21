@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: games
+#
+#  id            :integer          not null, primary key
+#  status        :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  dealer_id     :integer          not null
+#  table_minimum :integer          not null
+#  table_maximum :integer          not null
+#
+# Indexes
+#
+#  index_games_on_dealer_id  (dealer_id)
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+game_one:
+  status: in_progress
+  dealer: easy_dealer
+
+game_two:
+  status: not_started
+  dealer: medium_dealer
+
+game_three:
+  status: completed
+  dealer: hard_dealer

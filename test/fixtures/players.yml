@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: players
+#
+#  id         :integer          not null, primary key
+#  bank_roll  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+player_one:
+  bank_roll: 1000
+
+player_two:
+  bank_roll: 500
+
+player_three:
+  bank_roll: 2000
+
+high_roller:
+  bank_roll: 10000
+
+broke_player:
+  bank_roll: 0

@@ -2,29 +2,29 @@ class Card < ApplicationRecord
     belongs_to :deck
     belongs_to :hand, optional: true
 
-    SUIT_TYPES = ['heart', 'spade', 'club', 'diamond'].freeze
+    SUIT_TYPES = [ "heart", "spade", "club", "diamond" ].freeze
     RANK_TYPES = [
-        'A',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
-        '8',
-        '9',
-        '10',
-        'J',
-        'Q',
-        'K'
+        "A",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "J",
+        "Q",
+        "K"
     ].freeze
 
-    validates :suit, inclusion: {in: SUIT_TYPES}
-    validates :rank, inclusion: {in: RANK_TYPES}
+    validates :suit, inclusion: { in: SUIT_TYPES }
+    validates :rank, inclusion: { in: RANK_TYPES }
 
 
-    # suit [heart, spade, club, diamond]
-    # rank [ace -> king]
+  # suit [heart, spade, club, diamond]
+  # rank [ace -> king]
 end
 
 # == Schema Information

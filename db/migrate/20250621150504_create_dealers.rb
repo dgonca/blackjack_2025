@@ -3,7 +3,7 @@ class CreateDealers < ActiveRecord::Migration[8.0]
     create_table :dealers do |t|
       t.string :name
       t.string :level
-      
+
       t.timestamps
     end
   end

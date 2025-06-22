@@ -1,17 +1,17 @@
 class Dealer < ApplicationRecord
     has_many :games
 
-    LEVEL_TYPES = ['easy', 'medium', 'hard'].freeze
+    LEVEL_TYPES = [ "easy", "medium", "hard" ].freeze
     DEALER_NAMES = [
-        'Lightning Larry',
-        'Medium Mark',
-        'Slow Down Susan'
+        "Lightning Larry",
+        "Medium Mark",
+        "Slow Down Susan"
     ].freeze
 
     DEALER_TYPES = {
-        easy: {level: 'easy', name: 'Slow Down Susan'},
-        medium: {level: 'medium', name: 'Medium Mark'},
-        hard: {level: 'hard', name: 'Lightning Larry'}
+        easy: { level: "easy", name: "Slow Down Susan" },
+        medium: { level: "medium", name: "Medium Mark" },
+        hard: { level: "hard", name: "Lightning Larry" }
     }
 
     # validates :name, inclusion: {in: DEALER_NAMES}

@@ -54,7 +54,7 @@ class Game < ApplicationRecord
         raise ArgumentError if cpu_count > CPU_MAX
         seats_needed = (cpu_count + 1).times.to_a
         seats_available = seats_needed.each_with_object([]) do |s, arr|
-            arr << s unless s === game_info[:seat]
+            arr << s unless s === game_info["seat"]
         end
         seats_available.each do |cpu|
             player = Player.create_new_cpu(limits[:table_minimum]*10)

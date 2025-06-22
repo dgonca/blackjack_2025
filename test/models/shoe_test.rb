@@ -42,12 +42,12 @@ class ShoeTest < ActiveSupport::TestCase
     game = Game.create(dealer: dealer, table_minimum: 5, table_maximum: 500)
     shoe = Shoe.generate_shoe(game)
     first_5_cards = shoe.cards.first(5)
-    first_5_cards_indicies = []
-    first_5_cards.each_with_index {|card, index| first_5_cards_indicies << index }
+    first_5_cards_indices = []
+    first_5_cards.each_with_index {|card, index| first_5_cards_indices << index }
     assert first_5_cards.all? {|card| card.position.nil? }
     shoe.shuffle
     first_5_cards.each {|card| card.reload }
     assert_not first_5_cards.all? {|card| card.position.nil? }
-    assert_not_equal first_5_cards_indicies, first_5_cards.pluck(:position)
+    assert_not_equal first_5_cards_indices, first_5_cards.pluck(:position)
   end
 end

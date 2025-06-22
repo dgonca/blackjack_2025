@@ -39,11 +39,11 @@ class Game < ApplicationRecord
             status: 'in_progress',
             dealer: dealer,
             table_minimum: limits[:table_minimum],
-            table_minimum: limits[:table_maximum]
+            table_maximum: limits[:table_maximum]
         )
 
         # set the player's game bank roll
-        games.seats.create!(
+        game.seats.create!(
             player: user.player,
             game_bank_roll: game_info['game_bank_roll'],
             table_position: game_info['seat']

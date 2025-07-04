@@ -10,9 +10,9 @@ class Hand < ApplicationRecord
 
         cards.each do |card|
             case card.rank
-            when 'A'
+            when "A"
                 aces += 1
-            when 'K', 'Q', 'J', '10'
+            when "K", "Q", "J", "10"
                 total += 10
             else
                 total += card.rank.to_i
@@ -32,7 +32,7 @@ class Hand < ApplicationRecord
     end
 
     def is_soft?
-        if current_score < 21 && card_ranks.include?('A')
+        current_score < 21 && card_ranks.include?("A")
     end
 
     def hit
@@ -41,11 +41,11 @@ class Hand < ApplicationRecord
 
     def blackjack?
         card_ranks = cards.pluck(&:rank)
-        has_ace = card_ranks.include?('A')
-        has_ten_value = card_ranks.any? { |r| ['10', 'J', 'Q', 'K'].include?(r) }
+        has_ace = card_ranks.include?("A")
+        has_ten_value = card_ranks.any? { |r| [ "10", "J", "Q", "K" ].include?(r) }
 
         has_ace && has_ten_value
-    end 
+    end
 
     def can_split?
         cards.count == 2 && cards[0] == cards[1]

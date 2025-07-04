@@ -19,7 +19,7 @@ class Game < ApplicationRecord
         dealt_card = shoe.shuffled_cards.first
         dealt_card.update(position: nil)
         hand.cards << dealt_card
-    end 
+    end
 
     # user is the current actual player
     # game_info consists of
@@ -34,7 +34,7 @@ class Game < ApplicationRecord
     #       difficulty: String
     #   }
     # }
-    
+
     def self.new_game(user, game_info)
         # find the dealer based on selected difficulty
         dealer = Dealer.find_or_create_new_dealer(game_info["difficulty"].to_sym)

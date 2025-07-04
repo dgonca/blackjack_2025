@@ -1,5 +1,4 @@
 class DealsController < ApplicationController
-
     # Take in the current deal
     # What player is next?
     # What actions are they able to take on their hand?
@@ -10,8 +9,5 @@ class DealsController < ApplicationController
         current_hand = current_player.current_hand(deal)
 
         deal.hands.select { |hand| hand.players_game.player_id === self.id }
-
     end
-
-
 end

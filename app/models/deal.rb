@@ -1,7 +1,7 @@
 class Deal < ApplicationRecord
    belongs_to :game
    has_many :hands
-   has_many :seats, through: :hands, class_name:"PlayersGame"
+   has_many :seats, through: :hands, class_name: "PlayersGame"
 
    # returns a Player who is at the current table position
    def current_player

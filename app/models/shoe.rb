@@ -21,6 +21,10 @@ class Shoe < ApplicationRecord
             card.update!(position: index)
         end
     end
+
+    def shuffled_cards
+        cards.order(position: desc).compact!
+    end
 end
 
 # == Schema Information

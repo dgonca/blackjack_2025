@@ -23,4 +23,9 @@ class HandTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  test "current_score" do
+    hand_1 # A, 4, A
+    # what this should equal
+    hand_1.current_score
+  end
 end
